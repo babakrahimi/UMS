@@ -1,0 +1,85 @@
+.backdrop {
+    opacity: 0;
+    visibility: hidden;
+    background-color: rgba(0,0,0,.5);
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    z-index: 1020;
+}
+
+.open-sidebar-menu:checked ~ #sidebar-menu {
+    transform: translateX(0);
+}
+
+.open-sidebar-menu:checked ~ .backdrop {
+    opacity: 1;
+    visibility: visible;
+}
+
+.open-sidebar-menu {
+    transition: all 0.3s;
+    box-sizing: border-box;
+    display: none;
+}
+.sidebar-icon-toggle {
+    display: none;
+    transition: all 0.3s;
+    box-sizing: border-box;
+    cursor: pointer;
+    position: fixed;
+    z-index: 1040;
+    height: 100%;
+    width: 100%;
+    top: 20px;
+    left: 25px;
+    height: 22px;
+    width: 22px;
+}
+.spinner {
+    transition: all 0.3s;
+    box-sizing: border-box;
+    position: absolute;
+    height: 3px;
+    width: 100%;
+    background-color: #fff;
+}
+.horizontal {
+    transition: all 0.3s;
+    box-sizing: border-box;
+    position: relative;
+    float: left;
+    margin-top: 3px;
+}
+.diagonal.part-1 {
+    position: relative;
+    transition: all 0.3s;
+    box-sizing: border-box;
+    float: left;
+}
+.diagonal.part-2 {
+    transition: all 0.3s;
+    box-sizing: border-box;
+    position: relative;
+    float: left;
+    margin-top: 3px;
+}
+.open-sidebar-menu:checked ~ .sidebar-icon-toggle > .horizontal {
+    transition: all 0.3s;
+    box-sizing: border-box;
+    opacity: 0;
+}
+.open-sidebar-menu:checked ~ .sidebar-icon-toggle > .diagonal.part-1 {
+    transition: all 0.3s;
+    box-sizing: border-box;
+    transform: rotate(135deg);
+    margin-top: 8px;
+}
+.open-sidebar-menu:checked ~ .sidebar-icon-toggle > .diagonal.part-2 {
+    transition: all 0.3s;
+    box-sizing: border-box;
+    transform: rotate(-135deg);
+    margin-top: -9px;
+}
